@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin" />
+    <title>openseadragon_demo</title>
+    <script src="./openseadragon.min.js"></script>
+</head>
+<style>
+    html,
+    body,
+    #openseadragon1 {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #111;
+    }
+</style>
+
+<body>
+    <div id="openseadragon1"></div>
+</body>
+
+<script type="text/javascript">
+
+    OpenSeadragon({
+        id: "openseadragon1",
+        // openseadragon 自带的图片路径
+        prefixUrl: "./images/",
+
+        tileSources: {
+            Image: {
+                xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+                // 图片文件夹地址
+                Url: "http://lht-test1.oss-cn-beijing.aliyuncs.com/mydzi_files1/",
+
+                Overlap: "1",
+
+                TileSize: "512",
+
+                Format: "jpg",
+
+                Size: {
+                    Height: "19282",
+
+                    Width: "7047",
+                }
+            }
+        },
+        // 导航
+        showNavigator: true,
+        // 初始旋转角度
+        degrees: 0,
+        // 显示旋转按钮
+        showRotationControl: true,
+        // 在触觉设备上启用触摸旋转
+        gestureSettingsTouch: {
+            pinchRotate: true
+        }
+    });
+</script>
+
+</html>
